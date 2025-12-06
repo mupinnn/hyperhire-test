@@ -26,6 +26,7 @@ const config: Config = {
       blueberry: '#4A77FF',
       turquoise: '#40E2E8',
       azure: '#EDFCFF',
+      lotion: '#FBFBFB',
     },
     extend: {
       fontFamily: {
