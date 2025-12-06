@@ -17,6 +17,7 @@ const config: Config = {
       'light-sky-blue': '#8BC4FF',
       'dark-sky-blue': '#82BFD4',
       'yellow-sun': '#FBFF23',
+      'blue-gray/90': '#24252F',
       'blue-gray/80': '#343741',
       'blue-gray/60': '#5E626F',
       'blue-gray/40': '#C1C5CF',
@@ -28,7 +29,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+        notoKR: ['var(--font-noto-sans-kr)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
