@@ -25,9 +25,9 @@ const setCardClasses = (indexes: Indexes, cardIndex: number) => {
   if (indexes.currentIndex === cardIndex) {
     return 'bg-white scale-100 translate-x-0 z-30';
   } else if (indexes.nextIndex === cardIndex) {
-    return 'bg-azure scale-90 translate-x-10 z-20';
+    return 'bg-azure scale-90 translate-x-10 z-20 md:translate-x-32';
   } else if (indexes.prevIndex === cardIndex) {
-    return 'bg-azure scale-90 -translate-x-10 z-10';
+    return 'bg-azure scale-90 -translate-x-10 z-10 md:-translate-x-32';
   }
 
   return 'opacity-0 scale-0 translate-x-0 z-10';
@@ -73,56 +73,58 @@ export function HomeSlider() {
   };
 
   return (
-    <div className="relative w-full max-w-[355px]">
-      <button onClick={handleLeftButton} className="text-white absolute -left-3.5 top-1/2 -translate-y-1/2 z-50">
-        <CaretLeftIcon />
+    <div className="relative h-[314px] mx-auto flex justify-center w-full max-w-[355px] sm:h-[408px] md:max-w-[540px]">
+      <button
+        onClick={handleLeftButton}
+        className="text-white absolute -left-3.5 top-1/2 -translate-y-1/2 z-50 md:-left-6">
+        <CaretLeftIcon className="md:size-8" />
       </button>
-      <button onClick={handleRightButton} className="text-white absolute -right-3.5 top-1/2 -translate-y-1/2 z-50">
-        <CaretRigtIcon />
+      <button
+        onClick={handleRightButton}
+        className="text-white absolute -right-3.5 top-1/2 -translate-y-1/2 z-50 md:-right-6">
+        <CaretRigtIcon className="md:size-8" />
       </button>
 
-      <div className="relative h-[314px] mx-auto w-full flex justify-center">
-        {talents.map((talent, i) => (
-          <div
-            key={i}
-            className={cn(
-              'bg-white rounded-xl py-9 px-4 flex flex-col gap-4 items-center justify-center max-w-[245px] shrink-0 transition-all scale-100 translate-x-10 absolute shadow-[0px_13.84px_22.15px_0px_#0000001F]',
-              setCardClasses(indexes, i),
-            )}>
-            <div className="relative flex items-center justify-center">
-              <Image
-                alt="Abhishek Gupta's avatar"
-                src={avatarImage}
-                placeholder="blur"
-                sizes="64px"
-                className="size-16 rounded-full"
-                style={{ objectFit: 'cover' }}
-              />
-              <Image
-                alt="Abhishek Gupta's country"
-                src={avatarFlagImage}
-                placeholder="blur"
-                className="absolute -right-1 bottom-0 w-[25px] h-[18px]"
-              />
-            </div>
-            <div className="text-center">
-              <p className="text-blue-gray/90 font-poppins text-lg">{talent.name}</p>
-              <p className="font-poppins text-sm text-blueberry">
-                {talent.role} &bull; {talent.yoe}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-1 items-center justify-center">
-              {talent.skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="text-sm font-notoKR text-blue-gray/60 rounded-md border border-blue-gray/40 px-3 py-1 text-center">
-                  {skill}
-                </div>
-              ))}
-            </div>
+      {talents.map((talent, i) => (
+        <div
+          key={i}
+          className={cn(
+            'bg-white rounded-xl py-9 px-4 h-full flex flex-col gap-4 items-center justify-center max-w-[245px] shrink-0 transition-all scale-100 translate-x-10 absolute shadow-[0px_13.84px_22.15px_0px_#0000001F] sm:max-w-[290px]',
+            setCardClasses(indexes, i),
+          )}>
+          <div className="relative flex items-center justify-center">
+            <Image
+              alt="Abhishek Gupta's avatar"
+              src={avatarImage}
+              placeholder="blur"
+              sizes="64px"
+              className="size-16 rounded-full sm:size-[120px]"
+              style={{ objectFit: 'cover' }}
+            />
+            <Image
+              alt="Abhishek Gupta's country"
+              src={avatarFlagImage}
+              placeholder="blur"
+              className="absolute -right-1 bottom-0 w-[25px] h-[18px] sm:right-2 sm:bottom-1"
+            />
           </div>
-        ))}
-      </div>
+          <div className="text-center">
+            <p className="text-blue-gray/90 font-poppins text-lg sm:text-2xl">{talent.name}</p>
+            <p className="font-poppins text-sm text-blueberry sm:text-base">
+              {talent.role} &bull; {talent.yoe}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-1 items-center justify-center sm:mt-5">
+            {talent.skills.map((skill) => (
+              <div
+                key={skill}
+                className="text-sm font-notoKR text-blue-gray/60 rounded-md border border-blue-gray/40 px-3 py-1 text-center sm:text-base">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

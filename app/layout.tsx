@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${poppins.variable} ${notoSansKR.variable} antialiased`}>
-        <main className="min-h-svh flex flex-col">{children}</main>
+        <main className="min-h-svh flex flex-col overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>
