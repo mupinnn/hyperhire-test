@@ -6,7 +6,16 @@ import { Tooltip } from '@/components/ui/tooltip';
 import { HomeSlider } from '@/components/home/home-slider';
 import { HomeServicesSlider } from '@/components/home/home-services-slider';
 
-export default function Home() {
+async function getTalents() {
+  const res = await fetch(
+    process.env.NODE_ENV === 'production' ? (process.env.URL as string) : 'http://localhost:3000/api/talents',
+  );
+  return res.json();
+}
+
+export default async function Home() {
+  const talentsData = await getTalents();
+
   return (
     <>
       <Navbar />
@@ -85,7 +94,7 @@ export default function Home() {
               <p>월 100만원</p>
             </Tooltip>
 
-            <HomeSlider />
+            <HomeSlider items={talentsData} />
           </motion.div>
         </div>
 

@@ -21,6 +21,15 @@ type Indexes = {
   nextIndex: number;
 };
 
+type HomeSliderProps = {
+  items: Array<{
+    name: string;
+    role: string;
+    yoe: string;
+    skills: string[];
+  }>;
+};
+
 const setCardClasses = (indexes: Indexes, cardIndex: number) => {
   if (indexes.currentIndex === cardIndex) {
     return 'bg-white scale-100 translate-x-0 z-30';
@@ -33,7 +42,7 @@ const setCardClasses = (indexes: Indexes, cardIndex: number) => {
   return 'opacity-0 scale-0 translate-x-0 z-10';
 };
 
-export function HomeSlider() {
+export function HomeSlider({ items }: HomeSliderProps) {
   const [indexes, setIndexes] = useState<Indexes>({
     prevIndex: talents.length - 1,
     currentIndex: 0,
@@ -85,7 +94,7 @@ export function HomeSlider() {
         <CaretRigtIcon className="md:size-8" />
       </button>
 
-      {talents.map((talent, i) => (
+      {items.map((talent, i) => (
         <div
           key={i}
           className={cn(
