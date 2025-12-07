@@ -10,7 +10,9 @@ import { HomeServicesSlider } from '@/components/home/home-services-slider';
 
 async function getTalents() {
   const res = await fetch(
-    process.env.NODE_ENV === 'production' ? (process.env.URL as string) : 'http://localhost:3000/api/talents',
+    process.env.NODE_ENV === 'production'
+      ? `${process.env.URL as string}/api/talents`
+      : 'http://localhost:3000/api/talents',
   );
   return res.json();
 }
