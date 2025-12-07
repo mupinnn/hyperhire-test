@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import * as motion from 'motion/react-client';
-import bgImage from './assets/background-2.png';
-import { Navbar } from './components/navbar';
-import { Tooltip } from './components/ui/tooltip';
-import { HomeSlider } from './components/home/home-slider';
-import { HomeServicesSlider } from './components/home/home-services-slider';
+import bgImage from '@/assets/background-2.png';
+import { Navbar } from '@/components/navbar';
+import { Tooltip } from '@/components/ui/tooltip';
+import { HomeSlider } from '@/components/home/home-slider';
+import { HomeServicesSlider } from '@/components/home/home-services-slider';
 
 export default function Home() {
   return (

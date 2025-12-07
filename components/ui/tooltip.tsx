@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/app/libs/utils.lib';
+import { cn } from '@/libs/utils.lib';
 
 const tooltipVariants = cva('py-1.5 px-3 rounded-lg w-fit text-lg relative', {
   variants: {

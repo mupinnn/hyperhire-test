@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import avatarImage from '@/app/assets/avatar.png';
-import avatarFlagImage from '@/app/assets/flag.png';
-import { cn } from '@/app/libs/utils.lib';
+import avatarImage from '@/assets/avatar.png';
+import avatarFlagImage from '@/assets/flag.png';
+import { cn } from '@/libs/utils.lib';
 import { CaretRigtIcon } from '../icons/caret-right';
 import { CaretLeftIcon } from '../icons/caret-left';
 

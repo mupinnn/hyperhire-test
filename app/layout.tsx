@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Poppins, Noto_Sans_KR } from 'next/font/google';
-import { Footer } from './components/footer';
+import { Footer } from '@/components/footer';
 
 const poppins = Poppins({
   subsets: ['latin'],
