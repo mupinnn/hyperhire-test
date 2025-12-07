@@ -1,4 +1,27 @@
 import { HyperhireLogoColored } from './hyperhire-logo';
+import { AvatarIcon } from './icons/avatar';
+import { CodeIcon } from './icons/code';
+import { GearIcon } from './icons/gear';
+import { KorIcon } from './icons/kor';
+
+const services = [
+  {
+    label: '해외 개발자 원격 채용',
+    icon: CodeIcon,
+  },
+  {
+    label: '외국인 원격 채용 (비개발)',
+    icon: AvatarIcon,
+  },
+  {
+    label: '한국어 가능 외국인 채용',
+    icon: KorIcon,
+  },
+  {
+    label: '해외 개발자 활용 서비스',
+    icon: GearIcon,
+  },
+];
 
 export function Footer() {
   return (
@@ -16,16 +39,13 @@ export function Footer() {
         </div>
 
         <div className="grid grid-cols-2 gap-2 mt-[18px] md:mt-0 xl:grid-cols-4">
-          {[
-            '해외 개발자 원격 채용',
-            '외국인 원격 채용 (비개발)',
-            '한국어 가능 외국인 채용',
-            '해외 개발자 활용 서비스',
-          ].map((t) => (
-            <div key={t} className="flex flex-col gap-4 font-notoKR bg-white p-4 rounded-xl">
+          {services.map((service, i) => (
+            <div key={i} className="flex flex-col gap-4 font-notoKR bg-white p-4 rounded-xl">
               <div className="space-y-3 grow">
-                <div className="size-10 bg-anti-flash-white rounded-lg" />
-                <p className="text-sm">{t}</p>
+                <div className="size-10 bg-anti-flash-white rounded-lg flex items-center justify-center">
+                  <service.icon />
+                </div>
+                <p className="text-sm">{service.label}</p>
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-sm">바로가기</span>
