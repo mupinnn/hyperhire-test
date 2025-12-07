@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Image from 'next/image';
 import * as motion from 'motion/react-client';
 import bgImage from '@/assets/background-2.png';
