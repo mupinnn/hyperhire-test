@@ -27,6 +27,8 @@ const config: Config = {
       turquoise: '#40E2E8',
       azure: '#EDFCFF',
       lotion: '#FBFBFB',
+      'gray/100': '#F2F4F7',
+      'gray/700': '#344054',
     },
     extend: {
       fontFamily: {
